@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-dark-950 text-dark-100 antialiased;
+  }
+}
+
+@layer components {
+  /* Admin Panel Components */
+  .admin-card {
+    @apply bg-dark-900 border border-dark-700/50 rounded-2xl shadow-lg;
+  }
+  
+  .admin-input {
+    @apply w-full px-4 py-2.5 rounded-xl bg-dark-800 border border-dark-600 text-white placeholder-dark-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors;
+  }
+
+  .admin-btn-primary {
+    @apply px-4 py-2.5 rounded-xl font-medium text-white bg-primary-600 hover:bg-primary-500 transition-colors shadow-lg shadow-primary-500/20 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .admin-btn-secondary {
+    @apply px-4 py-2.5 rounded-xl font-medium text-dark-200 bg-dark-800 hover:bg-dark-700 border border-dark-600 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .admin-btn-danger {
+    @apply px-4 py-2.5 rounded-xl font-medium text-white bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 text-red-500 transition-colors shadow-lg shadow-red-500/10;
+  }
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  @apply min-h-[300px] outline-none;
+}
+.ProseMirror p {
+  @apply mb-4;
+}
+.ProseMirror p.is-editor-empty:first-child::before {
+  @apply text-dark-500 float-left h-0 pointer-events-none;
+  content: attr(data-placeholder);
+}
+.ProseMirror h1 {
+  @apply text-3xl font-bold mb-4 mt-6 text-white;
+}
+.ProseMirror h2 {
+  @apply text-2xl font-bold mb-4 mt-6 text-white;
+}
+.ProseMirror h3 {
+  @apply text-xl font-bold mb-3 mt-5 text-white;
+}
+.ProseMirror ul {
+  @apply list-disc pl-6 mb-4;
+}
+.ProseMirror ol {
+  @apply list-decimal pl-6 mb-4;
+}
+.ProseMirror blockquote {
+  @apply border-l-4 border-primary-500 pl-4 py-1 my-4 bg-primary-500/5 italic text-dark-300;
+}
+.ProseMirror img {
+  @apply max-w-full rounded-xl my-4 mx-auto block;
+  &.ProseMirror-selectednode {
+    @apply ring-2 ring-primary-500;
+  }
+}
+.ProseMirror a {
+  @apply text-primary-400 underline;
+}
+.ProseMirror iframe {
+  @apply w-full aspect-video rounded-xl my-4;
+}
